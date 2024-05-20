@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Sitio Web{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Cambia el color de fondo*/
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333; /* Cambia el color de fondo del encabezado*/
+            color: #fff; /* Cambia el color del texto del encabezado*/
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff; /* Cambia el color de los enlaces*/
+            text-decoration: none;
+        }
+        main {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff; /* Cambia el color de fondo del contenido*/
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #333; /* Cambia el color de fondo del pie de página*/
+            color: #fff; /* Cambia el color del texto del pie de página*/
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Primer Página</h1> 
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'add_author' %}">Agregar Autor</a></li>
+                <li><a href="{% url 'add_book' %}">Agregar Libro</a></li>
+                <li><a href="{% url 'add_publisher' %}">Agregar Editorial</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Pie de página -->
+    </footer>
+</body>
+</html>
